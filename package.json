@@ -1,6 +1,7 @@
 {
   "name": "lexa",
   "version": "0.1.0",
+  "homepage": "https://github.com/shahalam13/pos-admin-react",
   "private": true,
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.4.0",
@@ -22,6 +23,7 @@
     "chartist": "^0.11.4",
     "chartist-plugin-tooltips-updated": "^0.1.2",
     "draft-js": "^0.11.5",
+    "gh-pages": "^3.1.0",
     "google-maps-react": "^2.0.6",
     "mdbreact": "^4.26.0",
     "metismenujs": "^1.1.0",
@@ -52,7 +54,7 @@
     "react-raphael-chart": "^0.8.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "react-select": "^3.1.0",
     "react-sparklines": "^1.7.0",
     "react-streetview": "^1.1.1",
@@ -64,7 +66,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --max-old-space-size=8000 build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
