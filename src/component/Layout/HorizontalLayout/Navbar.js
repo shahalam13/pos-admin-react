@@ -121,7 +121,7 @@ class Navbar extends Component {
               >
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="index">
+                    <Link className="nav-link" to="/pos-admin-react/dashboard">
                       <i className="ti-dashboard"></i>Dashboard
                     </Link>
                   </li>

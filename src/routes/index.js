@@ -60,53 +60,63 @@ import Pages500 from "../pages/Extra Pages/pages-500";
 
 const authProtectedRoutes = [
   // DashBoard
-  { path: "/dashboard", component: Dashboard },
+  { path: "/pos-admin-react/dashboard", component: Dashboard },
 
   //user management
-  { path: "/user-list", component: UserList },
-  { path: "/add-user", component: AddUser },
+  { path: "/pos-admin-react/user-list", component: UserList },
+  { path: "/pos-admin-react/add-user", component: AddUser },
 
   //category management
-  { path: "/category-list", component: CategoryList },
-  { path: "/add-category", component: AddCategory },
+  { path: "/pos-admin-react/category-list", component: CategoryList },
+  { path: "/pos-admin-react/add-category", component: AddCategory },
 
   //product management
-  { path: "/product-list", component: ProductList },
-  { path: "/add-product", component: AddProduct },
+  { path: "/pos-admin-react/product-list", component: ProductList },
+  { path: "/pos-admin-react/add-product", component: AddProduct },
 
   //purchase management
-  { path: "/purchase-list", component: PurchaseList },
-  { path: "/add-purchase", component: AddPurchase },
+  { path: "/pos-admin-react/purchase-list", component: PurchaseList },
+  { path: "/pos-admin-react/add-purchase", component: AddPurchase },
 
   //purchase management
-  { path: "/sales-list", component: SalesList },
-  { path: "/add-sale", component: AddSale },
+  { path: "/pos-admin-react/sales-list", component: SalesList },
+  { path: "/pos-admin-react/add-sale", component: AddSale },
 
   //stock transfer
-  { path: "/transfer-list", component: TransferList },
-  { path: "/add-transfer", component: AddTransfer },
+  { path: "/pos-admin-react/transfer-list", component: TransferList },
+  { path: "/pos-admin-react/add-transfer", component: AddTransfer },
 
   //stock adjustment
-  { path: "/adjustment-list", component: AdjustmentList },
-  { path: "/add-adjustment", component: AddAdjustment },
+  { path: "/pos-admin-react/adjustment-list", component: AdjustmentList },
+  { path: "/pos-admin-react/add-adjustment", component: AddAdjustment },
 
   //expense adjustment
-  { path: "/expense-list", component: ExpenseList },
-  { path: "/add-expense", component: AddExpense },
+  { path: "/pos-admin-react/expense-list", component: ExpenseList },
+  { path: "/pos-admin-react/add-expense", component: AddExpense },
 
   //expense category
-  { path: "/expense-category-list", component: ExpenseCategoryList },
-  { path: "/add-expense-category", component: AddExpenseCategory },
+  {
+    path: "/pos-admin-react/expense-category-list",
+    component: ExpenseCategoryList,
+  },
+  {
+    path: "/pos-admin-react/add-expense-category",
+    component: AddExpenseCategory,
+  },
 
   //reports
-  { path: "/customer-report", component: CustomerReport },
-  { path: "/supplier-report", component: SupplierReport },
-  { path: "/product-report", component: ProductReport },
+  { path: "/pos-admin-react/customer-report", component: CustomerReport },
+  { path: "/pos-admin-react/supplier-report", component: SupplierReport },
+  { path: "/pos-admin-react/product-report", component: ProductReport },
 
   //busness stiitngs
-  { path: "/business-settinsgs", component: BusinessSettings },
+  { path: "/pos-admin-react/business-settinsgs", component: BusinessSettings },
 
-  { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
+  {
+    path: "/pos-admin-react",
+    exact: true,
+    component: () => <Redirect to="/dashboard" />,
+  },
 ];
 
 const publicRoutes = [
