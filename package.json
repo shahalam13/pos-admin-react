@@ -1,7 +1,7 @@
 {
   "name": "lexa",
   "version": "0.1.0",
-  "homepage": "https://github.com/shahalam13/pos-admin-react",
+  "homepage": "https://shahalam13.github.io/pos-admin-react",
   "private": true,
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.4.0",
