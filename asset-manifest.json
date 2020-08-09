@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pos-admin-react/static/css/main.2e6e972e.chunk.css",
-    "main.js": "/pos-admin-react/static/js/main.11982b31.chunk.js",
-    "main.js.map": "/pos-admin-react/static/js/main.11982b31.chunk.js.map",
+    "main.js": "/pos-admin-react/static/js/main.abd95716.chunk.js",
+    "main.js.map": "/pos-admin-react/static/js/main.abd95716.chunk.js.map",
     "runtime-main.js": "/pos-admin-react/static/js/runtime-main.304891ec.js",
     "runtime-main.js.map": "/pos-admin-react/static/js/runtime-main.304891ec.js.map",
     "static/css/2.14f83bf1.chunk.css": "/pos-admin-react/static/css/2.14f83bf1.chunk.css",
     "static/js/2.a40d6b9f.chunk.js": "/pos-admin-react/static/js/2.a40d6b9f.chunk.js",
     "static/js/2.a40d6b9f.chunk.js.map": "/pos-admin-react/static/js/2.a40d6b9f.chunk.js.map",
     "index.html": "/pos-admin-react/index.html",
-    "precache-manifest.93fd603b13b097766a9f92842d2a0b1a.js": "/pos-admin-react/precache-manifest.93fd603b13b097766a9f92842d2a0b1a.js",
+    "precache-manifest.ba9c4cf257bcadb6742692c59cfc5e41.js": "/pos-admin-react/precache-manifest.ba9c4cf257bcadb6742692c59cfc5e41.js",
     "service-worker.js": "/pos-admin-react/service-worker.js",
     "static/css/2.14f83bf1.chunk.css.map": "/pos-admin-react/static/css/2.14f83bf1.chunk.css.map",
     "static/css/main.2e6e972e.chunk.css.map": "/pos-admin-react/static/css/main.2e6e972e.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.14f83bf1.chunk.css",
     "static/js/2.a40d6b9f.chunk.js",
     "static/css/main.2e6e972e.chunk.css",
-    "static/js/main.11982b31.chunk.js"
+    "static/js/main.abd95716.chunk.js"
   ]
 }

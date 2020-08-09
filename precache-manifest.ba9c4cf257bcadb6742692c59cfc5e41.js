@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1fa8239e99e8fdba4c1b185457d3c243",
+    "revision": "775e3cfbb13d2da0ed5d95611a6b2c98",
     "url": "/pos-admin-react/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pos-admin-react/static/css/2.14f83bf1.chunk.css"
   },
   {
-    "revision": "e6ec2b55f595dd287734",
+    "revision": "5e8131e77b3a01286b1d",
     "url": "/pos-admin-react/static/css/main.2e6e972e.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pos-admin-react/static/js/2.a40d6b9f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e6ec2b55f595dd287734",
-    "url": "/pos-admin-react/static/js/main.11982b31.chunk.js"
+    "revision": "5e8131e77b3a01286b1d",
+    "url": "/pos-admin-react/static/js/main.abd95716.chunk.js"
   },
   {
     "revision": "5e84e625e3029488597f",
