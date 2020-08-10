@@ -33,18 +33,18 @@ class MonthlyEarnings extends Component {
 
         xaxis: {
           categories: [
-            2005,
-            2006,
-            2007,
-            2008,
-            2009,
-            2010,
-            2011,
-            2012,
-            2013,
-            2014,
-            2015,
-            2016,
+            "Oppo",
+            "Sony",
+            "HP",
+            "Dell",
+            "Asus",
+            "Samsung",
+            "Walton",
+            "LG",
+            "Singer",
+            "Lenovo",
+            "Accer",
+            "Nokia",
           ],
           labels: {
             formatter: function (val) {
@@ -98,7 +98,7 @@ class MonthlyEarnings extends Component {
       <React.Fragment>
         <Card>
           <CardBody>
-            <h4 className="card-title mb-4">Monthly Earnings In Bar Chart</h4>
+            <h4 className="card-title mb-4">Most Selling Brand</h4>
 
             <Row className="text-center mt-4">
               <Col xs="6">

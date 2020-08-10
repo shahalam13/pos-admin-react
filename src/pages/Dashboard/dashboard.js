@@ -10,12 +10,7 @@ import MiniCard from "./mini-card";
 import MonthlyEarnings from "./montly-earnings";
 import EmailSent from "./email-sent";
 import MonthlyEarnings2 from "./montly-earnings2";
-import Inbox from "./inbox";
-import RecentActivity from "./recent-activity";
-import WidgetUser from "./widget-user";
-import YearlySales from "./yearly-sales";
-import LatestTransactions from "./latest-transactions";
-import LatestOrders from "./latest-orders";
+import LineChart from "./bar-chart";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -87,6 +82,12 @@ class Dashboard extends Component {
 
           <Col xl="3">
             <MonthlyEarnings2 />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xl="12">
+            <LineChart />
           </Col>
         </Row>
 

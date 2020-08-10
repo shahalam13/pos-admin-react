@@ -488,7 +488,7 @@ class Navbar extends Component {
                     </div>
                   </li>
 
-                  {/* <li className="nav-item dropdown">
+                  <li className="nav-item dropdown">
                     <Link
                       onClick={(e) => {
                         e.preventDefault();
@@ -504,6 +504,7 @@ class Navbar extends Component {
                     >
                       <i className="ti-tablet"></i>Layouts
                     </Link>
+
                     <div
                       className={
                         this.state.isLayouts
@@ -512,43 +513,39 @@ class Navbar extends Component {
                       }
                       aria-labelledby="topnav-layouts"
                     >
-                      <li>
-                        <Link
-                          to="#"
-                          className="dropdown-item"
-                          onClick={this.changeLayout}
-                        >
-                          Vertical
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="#"
-                          className={
-                            this.props.layoutWidth === "boxed"
-                              ? "dropdown-item active"
-                              : "dropdown-item"
-                          }
-                          onClick={this.changeLayoutWidth}
-                        >
-                          {this.props.layoutWidth !== "fluid"
-                            ? "Fluid Layout"
-                            : "Boxed Layout"}
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="#"
-                          className="dropdown-item"
-                          onClick={this.changeThemePreloader}
-                        >
-                          {this.props.isPreloader === true
-                            ? "Without Preloader"
-                            : "Preloader"}
-                        </Link>
-                      </li>
+                      <Link
+                        to="#"
+                        className="dropdown-item"
+                        onClick={this.changeLayout}
+                      >
+                        Vertical
+                      </Link>
+
+                      <Link
+                        to="#"
+                        className={
+                          this.props.layoutWidth === "boxed"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
+                        onClick={this.changeLayoutWidth}
+                      >
+                        {this.props.layoutWidth !== "fluid"
+                          ? "Fluid Layout"
+                          : "Boxed Layout"}
+                      </Link>
+
+                      <Link
+                        to="#"
+                        className="dropdown-item"
+                        onClick={this.changeThemePreloader}
+                      >
+                        {this.props.isPreloader === true
+                          ? "Without Preloader"
+                          : "Preloader"}
+                      </Link>
                     </div>
-                  </li> */}
+                  </li>
                 </ul>
               </Collapse>
             </nav>

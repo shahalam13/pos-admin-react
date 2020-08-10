@@ -93,10 +93,22 @@ class ProductList extends Component {
           total: "13,500",
           due: "150",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -108,10 +120,22 @@ class ProductList extends Component {
           total: "13,500",
           due: "123",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -123,10 +147,22 @@ class ProductList extends Component {
           total: "13,500",
           due: "11,600",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
       ],
@@ -142,7 +178,7 @@ class ProductList extends Component {
 
                   <Link
                     type="button"
-                    to="add-purchase"
+                    to="add-sale"
                     className="waves-effect waves-light btn btn-primary"
                   >
                     Add

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row, Card, CardBody } from "reactstrap";
+import { Col, Row, Card, CardBody, FormGroup, Label } from "reactstrap";
+import FilterBox from "../../component/Common/filterBox";
 
 import { connect } from "react-redux";
 
@@ -19,6 +20,7 @@ class UserList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isShowFilerContent: false,
       breadcrumbItems: [
         { title: "Bronox", link: "#" },
         { title: "Tables", link: "#" },
@@ -30,6 +32,25 @@ class UserList extends Component {
   componentDidMount() {
     this.props.setBreadcrumbItems("Dashboard", this.state.breadcrumbItems);
   }
+
+  filterContent = () => {
+    return (
+      <Col lg="4">
+        <FormGroup>
+          <Label>Select Role</Label>
+          <div>
+            <select className="form-control">
+              <option>Select</option>
+              <option>Admin</option>
+              <option>Seller</option>
+              <option>Customer</option>
+              <option>Supplier</option>
+            </select>
+          </div>
+        </FormGroup>
+      </Col>
+    );
+  };
 
   render() {
     const data = {
@@ -65,10 +86,22 @@ class UserList extends Component {
           email: "nixon@gmail.com",
           role: "Admin",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -76,10 +109,22 @@ class UserList extends Component {
           email: "garrett@gmail.com",
           role: "Cashier",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -87,10 +132,22 @@ class UserList extends Component {
           email: "ashton@gmail.com",
           role: "Sales Man",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
       ],
@@ -98,6 +155,7 @@ class UserList extends Component {
     return (
       <React.Fragment>
         <Row>
+          <FilterBox filterContent={this.filterContent} />
           <Col xs="12">
             <Card>
               <CardBody>

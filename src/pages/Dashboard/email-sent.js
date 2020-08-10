@@ -29,7 +29,7 @@ class MonthlyEarnings extends Component {
           },
         },
         xaxis: {
-          categories: ["2007", "2008", "2009", "2010", "2011", "2012", "2013"],
+          categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
           axisBorder: {
             show: false,
           },
@@ -43,15 +43,15 @@ class MonthlyEarnings extends Component {
       },
       series: [
         {
-          name: "Series A",
+          name: "Awesome Shop",
           data: [0, 150, 60, 180, 90, 75, 30],
         },
         {
-          name: "Series B",
+          name: "Old Shop",
           data: [0, 45, 150, 36, 60, 240, 30],
         },
         {
-          name: "Series C",
+          name: "New Shop",
           data: [0, 15, 195, 21, 360, 120, 30],
         },
       ],
@@ -62,20 +62,20 @@ class MonthlyEarnings extends Component {
       <React.Fragment>
         <Card>
           <CardBody>
-            <h4 className="card-title mb-4">Profit & Loss Chart</h4>
+            <h4 className="card-title mb-4">Last 7 Days Sales Review</h4>
 
             <Row className="text-center mt-4">
               <Col xs="4">
                 <h5 className="font-size-20">$ 89425</h5>
-                <p className="text-muted">Total Sales</p>
+                <p className="text-muted">Awesome Shop</p>
               </Col>
               <Col xs="4">
                 <h5 className="font-size-20">$ 56210</h5>
-                <p className="text-muted">Total Income</p>
+                <p className="text-muted">Old Shop</p>
               </Col>
               <Col xs="4">
                 <h5 className="font-size-20">$ 8974</h5>
-                <p className="text-muted">Last Month</p>
+                <p className="text-muted">New Shop</p>
               </Col>
             </Row>
 

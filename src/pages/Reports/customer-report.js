@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row, Card, CardBody } from "reactstrap";
+import { Col, Row, Card, CardBody, FormGroup, Label } from "reactstrap";
+import FilterBox from "../../component/Common/filterBox";
 
 import { connect } from "react-redux";
 
@@ -9,8 +10,6 @@ import { setBreadcrumbItems } from "../../store/actions";
 // import { Link, withRouter } from "react-router-dom";
 
 import { MDBDataTable } from "mdbreact";
-
-import { Link } from "react-router-dom";
 
 //Import datatable css
 import "../Tables/datatables.scss";
@@ -31,6 +30,37 @@ class ProductList extends Component {
     this.props.setBreadcrumbItems("Dashboard", this.state.breadcrumbItems);
   }
 
+  filterContent = () => {
+    return (
+      <Row>
+        <Col lg="4">
+          <FormGroup>
+            <Label>Select Customer</Label>
+            <div>
+              <select className="form-control">
+                <option>Select</option>
+                <option>Jhon</option>
+                <option>Michel</option>
+              </select>
+            </div>
+          </FormGroup>
+        </Col>
+        <Col lg="4">
+          <FormGroup>
+            <Label>Select Payment Type</Label>
+            <div>
+              <select className="form-control">
+                <option>Select</option>
+                <option>Paid</option>
+                <option>Due</option>
+              </select>
+            </div>
+          </FormGroup>
+        </Col>
+      </Row>
+    );
+  };
+
   render() {
     const data = {
       columns: [
@@ -41,7 +71,7 @@ class ProductList extends Component {
           width: 100,
         },
         {
-          label: "Totla Sale",
+          label: "Total Sale",
           field: "total_sale",
           sort: "asc",
           width: 100,
@@ -92,6 +122,7 @@ class ProductList extends Component {
     return (
       <React.Fragment>
         <Row>
+          <FilterBox filterContent={this.filterContent} />
           <Col xs="12">
             <Card>
               <CardBody>

@@ -80,10 +80,22 @@ class ProductList extends Component {
           product: "Oppo",
           quantity: "500",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -93,10 +105,22 @@ class ProductList extends Component {
           product: "Sony",
           quantity: "400",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
         {
@@ -106,10 +130,22 @@ class ProductList extends Component {
           product: "HP",
           quantity: "900",
           action: (
-            <i
-              style={{ fontSize: 20 + "px", cursor: "pointer" }}
-              className="mdi mdi-delete"
-            ></i>
+            <span>
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-eye"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-pencil"
+              ></i>
+              &nbsp;
+              <i
+                style={{ fontSize: 20 + "px", cursor: "pointer" }}
+                className="mdi mdi-delete"
+              ></i>
+            </span>
           ),
         },
       ],

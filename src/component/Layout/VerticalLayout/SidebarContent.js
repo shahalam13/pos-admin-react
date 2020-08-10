@@ -299,7 +299,7 @@ class SidebarContent extends Component {
               </ul>
             </li>
 
-            {/* <li>
+            <li>
               <Link to="/#" className="has-arrow waves-effect">
                 <i className="mdi mdi-settings"></i>
                 <span>Layouts</span>
@@ -326,7 +326,7 @@ class SidebarContent extends Component {
                   </Link>
                 </li>
               </ul>
-            </li> */}
+            </li>
           </ul>
         </div>
       </React.Fragment>

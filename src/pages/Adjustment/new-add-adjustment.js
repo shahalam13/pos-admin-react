@@ -16,8 +16,6 @@ import { setBreadcrumbItems } from "../../store/actions";
 import { AvForm, AvField } from "availity-reactstrap-validation";
 import { Link } from "react-router-dom";
 
-import Select from "react-select";
-
 class AddProduct extends Component {
   constructor(props) {
     super(props);
@@ -28,17 +26,6 @@ class AddProduct extends Component {
         { id: 1, name: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
         { id: 2, name: "Dell e7440", quantity: 0, price: 30000, subtotal: 0 },
         { id: 3, name: "Sony F1", quantity: 0, price: 40000, subtotal: 0 },
-      ],
-      options: [
-        { value: 1, label: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
-        {
-          value: 2,
-          label: "Dell e7440",
-          quantity: 0,
-          price: 30000,
-          subtotal: 0,
-        },
-        { value: 3, label: "Sony F1", quantity: 0, price: 40000, subtotal: 0 },
       ],
       breadcrumbItems: [
         { title: "Bronox", link: "#" },
@@ -161,14 +148,6 @@ class AddProduct extends Component {
                           }}
                         >
                           <Label>Select Product</Label>
-
-                          {/* <Select
-                            className="mt-4 col-md-8 col-offset-4"
-                            options={this.state.options}
-                            value={this.state.selectValue}
-                            onChange={this.handleChange}
-                          /> */}
-
                           <select
                             className="form-control"
                             style={{ width: "90%" }}

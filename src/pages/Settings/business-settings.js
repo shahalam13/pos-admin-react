@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 //Import Action to copy breadcrumb items from local state to redux state
 import { setBreadcrumbItems } from "../../store/actions";
 import { AvForm, AvField } from "availity-reactstrap-validation";
-import { Link } from "react-router-dom";
 
 class AddProduct extends Component {
   constructor(props) {

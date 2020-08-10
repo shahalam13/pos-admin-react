@@ -32,7 +32,7 @@ class MonthlyEarnings extends Component {
       <React.Fragment>
         <Card>
           <CardBody>
-            <h4 className="card-title mb-4">Monthly Earnings In pie chart</h4>
+            <h4 className="card-title mb-4">Monthly Earnings In Pie Chart</h4>
             <Row className="text-center mt-4">
               <Col xs="6">
                 <h5 className="font-size-20">$10345</h5>
