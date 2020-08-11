@@ -15,17 +15,29 @@ import { connect } from "react-redux";
 import { setBreadcrumbItems } from "../../store/actions";
 import { AvForm, AvField } from "availity-reactstrap-validation";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 
 class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectValue: {},
+      selectValue: null,
       salesArr: [],
       productList: [
         { id: 1, name: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
         { id: 2, name: "Dell e7440", quantity: 0, price: 30000, subtotal: 0 },
         { id: 3, name: "Sony F1", quantity: 0, price: 40000, subtotal: 0 },
+      ],
+      options: [
+        { value: 1, label: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
+        {
+          value: 2,
+          label: "Dell e7440",
+          quantity: 0,
+          price: 30000,
+          subtotal: 0,
+        },
+        { value: 3, label: "Sony F1", quantity: 0, price: 40000, subtotal: 0 },
       ],
       breadcrumbItems: [
         { title: "Bronox", link: "#" },
@@ -42,37 +54,31 @@ class AddProduct extends Component {
     );
   }
 
-  handleChange = (event) => {
-    const id = event.target.value;
-    const product = this.state.productList.find((u) => u.id == id);
-
+  handleChange = (product) => {
     this.setState(
       {
         salesArr: [...this.state.salesArr, product],
+        selectValue: product,
       },
-      () => console.log("ok")
+      () => {}
     );
+  };
 
-    //console.log(this.state.salesArr);
+  inputChangedHandler = (event, id, index) => {
+    let product = this.state.productList.find((u) => u.id === id);
+    product.quantity = event.target.value;
+
+    let items = [...this.state.salesArr];
+    let item = { ...items[index] };
+    item.quantity = event.target.value;
+    item.subtotal = item.quantity * item.price;
+    items[index] = item;
+    this.setState({ salesArr: items });
   };
 
   deleteFromSales = (index) => {
     this.state.salesArr.splice(index, 1);
     this.forceUpdate();
-  };
-
-  inputChangedHandler = (event, id, index) => {
-    let product = this.state.productList.find((u) => u.id == id);
-    product.quantity = event.target.value;
-
-    this.state.salesArr[index].quantity = product.quantity;
-    this.state.salesArr[index].subtotal = product.quantity * product.price;
-
-    this.forceUpdate();
-
-    // this.setState({
-    //   values: { ...this.state.values, ev },
-    // });
   };
 
   render() {
@@ -149,7 +155,14 @@ class AddProduct extends Component {
                           }}
                         >
                           <Label>Select Product</Label>
-                          <select
+                          <Select
+                            className="mt-4 col-md-8 col-offset-4"
+                            options={this.state.options}
+                            value={this.state.selectValue}
+                            onChange={this.handleChange}
+                            placeholder={"Select a product"}
+                          />
+                          {/* <select
                             className="form-control"
                             style={{ width: "90%" }}
                             value={this.state.selectValue}
@@ -162,7 +175,7 @@ class AddProduct extends Component {
                                 {r.name}
                               </option>
                             ))}
-                          </select>
+                          </select> */}
                         </div>
                       </FormGroup>
 
@@ -191,7 +204,7 @@ class AddProduct extends Component {
                                         onChange={(event) =>
                                           this.inputChangedHandler(
                                             event,
-                                            value.id,
+                                            value.value,
                                             index
                                           )
                                         }

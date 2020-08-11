@@ -22,7 +22,7 @@ class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectValue: {},
+      selectValue: null,
       salesArr: [],
       productList: [
         { id: 1, name: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
@@ -55,37 +55,31 @@ class AddProduct extends Component {
     );
   }
 
-  handleChange = (event) => {
-    const id = event.target.value;
-    const product = this.state.productList.find((u) => u.id == id);
-
-    this.setState(
-      {
-        salesArr: [...this.state.salesArr, product],
-      },
-      () => console.log("ok")
-    );
-
-    //console.log(this.state.salesArr);
-  };
-
   deleteFromSales = (index) => {
     this.state.salesArr.splice(index, 1);
     this.forceUpdate();
   };
 
+  handleChange = (product) => {
+    this.setState(
+      {
+        salesArr: [...this.state.salesArr, product],
+        selectValue: product,
+      },
+      () => {}
+    );
+  };
+
   inputChangedHandler = (event, id, index) => {
-    let product = this.state.productList.find((u) => u.id == id);
+    let product = this.state.productList.find((u) => u.id === id);
     product.quantity = event.target.value;
 
-    this.state.salesArr[index].quantity = product.quantity;
-    this.state.salesArr[index].subtotal = product.quantity * product.price;
-
-    this.forceUpdate();
-
-    // this.setState({
-    //   values: { ...this.state.values, ev },
-    // });
+    let items = [...this.state.salesArr];
+    let item = { ...items[index] };
+    item.quantity = event.target.value;
+    item.subtotal = item.quantity * item.price;
+    items[index] = item;
+    this.setState({ salesArr: items });
   };
 
   render() {
@@ -162,14 +156,15 @@ class AddProduct extends Component {
                         >
                           <Label>Select Product</Label>
 
-                          {/* <Select
+                          <Select
                             className="mt-4 col-md-8 col-offset-4"
                             options={this.state.options}
                             value={this.state.selectValue}
                             onChange={this.handleChange}
-                          /> */}
+                            placeholder={"Select a product"}
+                          />
 
-                          <select
+                          {/* <select
                             className="form-control"
                             style={{ width: "90%" }}
                             value={this.state.selectValue}
@@ -182,7 +177,7 @@ class AddProduct extends Component {
                                 {r.name}
                               </option>
                             ))}
-                          </select>
+                          </select> */}
                         </div>
                       </FormGroup>
 
@@ -211,7 +206,7 @@ class AddProduct extends Component {
                                         onChange={(event) =>
                                           this.inputChangedHandler(
                                             event,
-                                            value.id,
+                                            value.value,
                                             index
                                           )
                                         }

@@ -10,6 +10,7 @@ import {
   Table,
 } from "reactstrap";
 import { connect } from "react-redux";
+import Select from "react-select";
 
 //Import Action to copy breadcrumb items from local state to redux state
 import { setBreadcrumbItems } from "../../store/actions";
@@ -20,8 +21,19 @@ class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectValue: {},
+      selectValue: null,
       salesArr: [],
+      options: [
+        { value: 1, label: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
+        {
+          value: 2,
+          label: "Dell e7440",
+          quantity: 0,
+          price: 30000,
+          subtotal: 0,
+        },
+        { value: 3, label: "Sony F1", quantity: 0, price: 40000, subtotal: 0 },
+      ],
       productList: [
         { id: 1, name: "Oppo F1", quantity: 0, price: 12000, subtotal: 0 },
         { id: 2, name: "Dell e7440", quantity: 0, price: 30000, subtotal: 0 },
@@ -42,38 +54,56 @@ class AddProduct extends Component {
     );
   }
 
-  handleChange = (event) => {
-    const id = event.target.value;
-    const product = this.state.productList.find((u) => u.id == id);
-
+  handleChange = (product) => {
     this.setState(
       {
         salesArr: [...this.state.salesArr, product],
+        selectValue: product,
       },
-      () => console.log("ok")
+      () => {}
     );
-
-    //console.log(this.state.salesArr);
   };
+
+  inputChangedHandler = (event, id, index) => {
+    let product = this.state.productList.find((u) => u.id === id);
+    product.quantity = event.target.value;
+
+    let items = [...this.state.salesArr];
+    let item = { ...items[index] };
+    item.quantity = event.target.value;
+    item.subtotal = item.quantity * item.price;
+    items[index] = item;
+    this.setState({ salesArr: items });
+  };
+
+  // handleChange = (event) => {
+  //   const id = event.target.value;
+  //   const product = this.state.productList.find((u) => u.id == id);
+
+  //   this.setState(
+  //     {
+  //       salesArr: [...this.state.salesArr, product],
+  //     },
+  //     () => console.log("ok")
+  //   );
+
+  // };
 
   deleteFromSales = (index) => {
     this.state.salesArr.splice(index, 1);
     this.forceUpdate();
   };
 
-  inputChangedHandler = (event, id, index) => {
-    let product = this.state.productList.find((u) => u.id == id);
-    product.quantity = event.target.value;
+  // inputChangedHandler = (event, id, index) => {
+  //   let product = this.state.productList.find((u) => u.id == id);
+  //   product.quantity = event.target.value;
 
-    this.state.salesArr[index].quantity = product.quantity;
-    this.state.salesArr[index].subtotal = product.quantity * product.price;
+  //   this.state.salesArr[index].quantity = product.quantity;
+  //   this.state.salesArr[index].subtotal = product.quantity * product.price;
 
-    this.forceUpdate();
+  //   this.forceUpdate();
 
-    // this.setState({
-    //   values: { ...this.state.values, ev },
-    // });
-  };
+  // };
 
   render() {
     return (
@@ -147,20 +177,13 @@ class AddProduct extends Component {
                           }}
                         >
                           <Label>Select Product</Label>
-                          <select
-                            className="form-control"
-                            style={{ width: "90%" }}
+                          <Select
+                            className="mt-4 col-md-8 col-offset-4"
+                            options={this.state.options}
                             value={this.state.selectValue}
                             onChange={this.handleChange}
-                          >
-                            <option>Select</option>
-
-                            {this.state.productList.map((r, i) => (
-                              <option key={i} value={r.id}>
-                                {r.name}
-                              </option>
-                            ))}
-                          </select>
+                            placeholder={"Select a product"}
+                          />
                         </div>
                       </FormGroup>
 
@@ -189,7 +212,7 @@ class AddProduct extends Component {
                                         onChange={(event) =>
                                           this.inputChangedHandler(
                                             event,
-                                            value.id,
+                                            value.value,
                                             index
                                           )
                                         }
